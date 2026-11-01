@@ -1,6 +1,6 @@
 
 ## Penetration Testing process:
 
-![[Pasted image 20261101152727.png]]
+![](attachments/Pasted%20image%2020261101163806.png)
 
 
