@@ -125,6 +125,18 @@ Now you have a fully stablized shell and
 `Manual enumeration` is a `critical` component. Many scanning tools simplify and accelerate the process. However, these cannot always bypass the security measures of the services.
 
 
+Network Mapper (`Nmap`) is an open-source network analysis and security auditing tool written in C, C++, Python, and Lua. It is designed to scan networks and identify which hosts are available on the network using raw packets, and services and applications, including the name and version, where possible. It can also identify the operating systems and versions of these hosts.
+
+### Nmap Architecture:
+
+- Host discovery
+- Port scanning
+- Service enumeration and detection
+- OS detection
+- Scriptable interaction with the target service (Nmap Scripting Engine)
+
+
+
 ```bash
 sudo nmap 10.129.2.28 -p 443 --packet-trace --disable-arp-ping -Pn -n --reason -sT
 ```
