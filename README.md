@@ -115,3 +115,23 @@ Now you have a fully stablized shell and
 - [ ]  Complete A Pro Lab
 
 
+
+# REAL GRIND STARTS FROM HERE!
+
+
+## Enumeration:- `Enumeration is the key`.
+
+
+`Manual enumeration` is a `critical` component. Many scanning tools simplify and accelerate the process. However, these cannot always bypass the security measures of the services.
+
+
+```bash
+sudo nmap 10.129.2.28 -p 443 --packet-trace --disable-arp-ping -Pn -n --reason -sT
+```
+
+ - `--packet-trace`: it logs all the packets that are being sent or RCVD from the target.
+ - `-Pn`: It disables the host discovery process and starts the scan directly.
+ - `--disable-arp-ping`: It disables the host discovery through ARP lookup and sends packets using other flags like `ICMP ECHO` or `SYN`.
+ - -`PE`: It strongly makes the system to send the `ICMP echo` requests for host discovery.
+
+ 
