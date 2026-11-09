@@ -136,6 +136,53 @@ Network Mapper (`Nmap`) is an open-source network analysis and security auditing
 - Scriptable interaction with the target service (Nmap Scripting Engine)
 
 
+The basic syntax of using nmap is generally as follows:
+
+```bash
+typhoon26@htb[/htb]$ nmap <scan types> <options> <target>
+```
+
+
+### Scan Techniques:
+
+```bash
+typhoon26@htb[/htb]$ sudo nmap -sS localhost
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-11 22:50 UTC
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.000010s latency).
+Not shown: 996 closed ports
+PORT          STATE           SERVICE
+22/tcp          open           ssh
+80/tcp          open           http
+5432/tcp     open           postgresql
+5901/tcp     open           vnc-1
+
+Nmap done: 1 IP address (1 host up) scanned in 0.18 seconds
+```
+
+
+### Host Discovery:
+
+```bash
+sudo nmap -sn 127.0.0.0/24 -oA typhoon | grep for | cut -d" " -f5
+```
+
+
+We can also use a list of IP already to given to us using the List file name with flag `-iL` or an IP ran
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```bash
 sudo nmap 10.129.2.28 -p 443 --packet-trace --disable-arp-ping -Pn -n --reason -sT
