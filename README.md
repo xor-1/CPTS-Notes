@@ -121,12 +121,6 @@ Now you have a fully stablized shell and
 
 ## Enumeration:- `Enumeration is the key`.
 
-
-`Manual enumeration` is a `critical` component. Many scanning tools simplify and accelerate the process. However, these cannot always bypass the security measures of the services.
-
-
-Network Mapper (`Nmap`) is an open-source network analysis and security auditing tool written in C, C++, Python, and Lua. It is designed to scan networks and identify which hosts are available on the network using raw packets, and services and applications, including the name and version, where possible. It can also identify the operating systems and versions of these hosts.
-
 ### Nmap Architecture:
 
 - Host discovery
@@ -140,25 +134,6 @@ The basic syntax of using nmap is generally as follows:
 
 ```bash
 typhoon26@htb[/htb]$ nmap <scan types> <options> <target>
-```
-
-
-### Scan Techniques:
-
-```bash
-typhoon26@htb[/htb]$ sudo nmap -sS localhost
-
-Starting Nmap 7.80 ( https://nmap.org ) at 2020-06-11 22:50 UTC
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.000010s latency).
-Not shown: 996 closed ports
-PORT          STATE           SERVICE
-22/tcp          open           ssh
-80/tcp          open           http
-5432/tcp     open           postgresql
-5901/tcp     open           vnc-1
-
-Nmap done: 1 IP address (1 host up) scanned in 0.18 seconds
 ```
 
 
@@ -183,37 +158,41 @@ We can also use a list of IP already to given to us using the List file name wit
 - Operating system
 
 
-|**State**|**Description**|
-|---|---|
-|`open`|This indicates that the connection to the scanned port has been established. These connections can be **TCP connections**, **UDP datagrams** as well as **SCTP associations**.|
-|`closed`|When the port is shown as closed, the TCP protocol indicates that the packet we received back contains an `RST` flag. This scanning method can also be used to determine if our target is alive or not.|
-|`filtered`|Nmap cannot correctly identify whether the scanned port is open or closed because either no response is returned from the target for the port or we get an error code from the target.|
-|`unfiltered`|This state of a port only occurs during the **TCP-ACK** scan and means that the port is accessible, but it cannot be determined whether it is open or closed.|
-|`open\|filtered`|If we do not get a response for a specific port, `Nmap` will set it to that state. This indicates that a firewall or packet filter may protect the port.|
-|`closed\|filtered`|This state only occurs in the **IP ID idle** scans and indicates that it was impossible to determine if the scanned port is closed or filtered by a firewall.|
+| **States**         | **Description**                                                                                                                                                                                         |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `open`             | This indicates that the connection to the scanned port has been established. These connections can be **TCP connections**, **UDP datagrams** as well as **SCTP associations**.                          |
+| `closed`           | When the port is shown as closed, the TCP protocol indicates that the packet we received back contains an `RST` flag. This scanning method can also be used to determine if our target is alive or not. |
+| `filtered`         | Nmap cannot correctly identify whether the scanned port is open or closed because either no response is returned from the target for the port or we get an error code from the target.                  |
+| `unfiltered`       | This state of a port only occurs during the **TCP-ACK** scan and means that the port is accessible, but it cannot be determined whether it is open or closed.                                           |
+| `open\|filtered`   | If we do not get a response for a specific port, `Nmap` will set it to that state. This indicates that a firewall or packet filter may protect the port.                                                |
+| `closed\|filtered` | This state only occurs in the **IP ID idle** scans and indicates that it was impossible to determine if the scanned port is closed or filtered by a firewall.                                           |
 
 
+### Important Flags:
+
+- **Scan Top 10 Ports:** --top-ports=10
+- **Top 100 Ports:** -F
+- **trace all packets**: `--packet-trace`
+- **Disable all ARP pings**: `--disable-ping-scan`
+- **Disable the host discovery process**: `-Pn`
+- **Disable the host name resolving**: `-n` 
+- **shows reason for a port state**: `--reason`
 
 
+### Scan Flags:
+
+- **Connect Scan:** `-sT`
+- **Half TCP Scan:** `-sS`
+- **UDP Scan:** `-sU`
+- **FIN Scan**: `-sF`
+- **NULL Scan:** `-sN`
+- **Xmass Scan:** `-sX`
+- **IDLE / Zombie scan:** `-sI`
+
+### **OS guessing by TTL:**
+
+- **Windows:** `128`
+- **Linux**:`64`
+- **Cisco Routers and Network Equipment:** `255` 
 
 
-
-
-
-
-
-
-
-
-
-
-```bash
-sudo nmap 10.129.2.28 -p 443 --packet-trace --disable-arp-ping -Pn -n --reason -sT
-```
-
- - `--packet-trace`: it logs all the packets that are being sent or RCVD from the target.
- - `-Pn`: It disables the host discovery process and starts the scan directly.
- - `--disable-arp-ping`: It disables the host discovery through ARP lookup and sends packets using other flags like `ICMP ECHO` or `SYN`.
- - -`PE`: It strongly makes the system to send the `ICMP echo` requests for host discovery.
-
- 
