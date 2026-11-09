@@ -188,6 +188,7 @@ We can also use a list of IP already to given to us using the List file name wit
 - **NULL Scan:** `-sN`
 - **Xmass Scan:** `-sX`
 - **IDLE / Zombie scan:** `-sI`
+- **Service Enumeration and Detection:** `-sV`
 
 ### **OS guessing by TTL:**
 
