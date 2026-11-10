@@ -179,6 +179,14 @@ We can also use a list of IP already to given to us using the List file name wit
 - **shows reason for a port state**: `--reason`
 - **Show scan status every 5 seconds:** `--status-every=5s`
 - **Verbosity level:** `-v` or `-vv`
+- **Speed:** `-T1`, `-T2`, `-T3`, `-T4`, `-T5`
+- `--min-parallelism <number>`
+- `--max-rtt-timeout <time>`
+- `--initial-rtt-timeout <time>`
+- `--max-retries`
+- `--min-rate 300`
+- **Number of Open Ports:** `cat tnet.default | grep "/tcp" | wc -l`
+- 
 
 
 ### Scan Flags:
@@ -244,5 +252,6 @@ typhoon26@htb[/htb]$ sudo nmap <target> --script <category>
 ```bash
 typhoon26@htb[/htb]$ sudo nmap <target> --script <script-name>,<script-name>,...
 ```
+
 
 
