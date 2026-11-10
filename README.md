@@ -197,3 +197,17 @@ We can also use a list of IP already to given to us using the List file name wit
 - **Cisco Routers and Network Equipment:** `255` 
 
 
+### Reporting:
+
+- **`-oN`:** Normal report
+- **`-oG`:** Grep able report
+- **`-oX`:** XML report
+- **`-oA`:** All reporting formats
+
+**Turn the XML to HTML using the command:**
+
+```bash
+xsltproc report.xml -o report.html
+```
+
+
