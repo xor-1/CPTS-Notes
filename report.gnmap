@@ -1,0 +1,4 @@
+# Nmap 7.98 scan initiated Tue Nov 10 20:54:17 2026 as: nmap -sS -oA report --disable-arp-ping -Pn -n 10.129.43.49
+Host: 10.129.43.49 ()	Status: Up
+Host: 10.129.43.49 ()	Ports: 22/open/tcp//ssh///, 80/open/tcp//http///, 110/open/tcp//pop3///, 139/open/tcp//netbios-ssn///, 143/open/tcp//imap///, 445/open/tcp//microsoft-ds///, 31337/open/tcp//Elite///	Ignored State: closed (993)
+# Nmap done at Tue Nov 10 20:54:25 2026 -- 1 IP address (1 host up) scanned in 7.93 seconds

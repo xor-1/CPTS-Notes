@@ -177,6 +177,8 @@ We can also use a list of IP already to given to us using the List file name wit
 - **Disable the host discovery process**: `-Pn`
 - **Disable the host name resolving**: `-n` 
 - **shows reason for a port state**: `--reason`
+- **Show scan status every 5 seconds:** `--status-every=5s`
+- **Verbosity level:** `-v` or `-vv`
 
 
 ### Scan Flags:
@@ -189,6 +191,8 @@ We can also use a list of IP already to given to us using the List file name wit
 - **Xmass Scan:** `-sX`
 - **IDLE / Zombie scan:** `-sI`
 - **Service Enumeration and Detection:** `-sV`
+- **Aggressive Scan:** `-A`
+
 
 ### **OS guessing by TTL:**
 
@@ -208,6 +212,37 @@ We can also use a list of IP already to given to us using the List file name wit
 
 ```bash
 xsltproc report.xml -o report.html
+```
+
+
+> **We can generally say that the service headers come up with `PSH` flag in the `TCP` headers.**
+
+
+
+### Nmap Scripting Engine (NSE):
+
+- Used to execute specific scripts written in Lua.
+- 14 categories of Scripts can be found at webstie.
+
+
+#### Default Scripts
+
+```bash
+typhoon26@htb[/htb]$ sudo nmap <target> -sC
+```
+
+
+#### Specific Scripts Category
+
+```bash
+typhoon26@htb[/htb]$ sudo nmap <target> --script <category>
+```
+
+
+#### Defined Scripts
+
+```bash
+typhoon26@htb[/htb]$ sudo nmap <target> --script <script-name>,<script-name>,...
 ```
 
 
