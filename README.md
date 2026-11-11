@@ -8,10 +8,6 @@
 
 **1. Network enumeration with nmap**
 
-|
-
 **2. Footprinting**
-
-|
 
 **3. Information Gathering - Web Edition**
