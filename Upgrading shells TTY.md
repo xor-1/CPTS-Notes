@@ -1,3 +1,4 @@
+### Upgrading shells TTY
 
 once you get the shell on the server, whether its reverse or bind, the first thing is to stablize it by executing the bash shell:
 
@@ -47,6 +48,3 @@ using this command you will have the dimensions of shell as same as of the local
 
 
 Now you have a fully stablized shell and
- 
- 
- #### YOU ARE READY TO GO!
