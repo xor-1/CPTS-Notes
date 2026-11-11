@@ -326,9 +326,20 @@ ncat -nv --source-port 53 10.129.2.28 50000
 ```
 
 
+**Lessons learned for nmap enumeration:**
+
+- Never overlook any anything, go into the details.
+- It takes time, be patient and have sbrrr.
+- Good things take time.
+
+
+
+![](attachments/Pasted%20image%2020261111111542.png)
+
 
 
 ---
 
 
 
+NEXT
