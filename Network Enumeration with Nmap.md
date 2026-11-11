@@ -216,4 +216,7 @@ ncat -nv --source-port 53 10.129.2.28 50000
 
 
 
-NEXT
+NEXT ON TO FOOTPRINTING:
+
+![](/footprinting)
+
