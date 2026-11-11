@@ -334,7 +334,7 @@ ncat -nv --source-port 53 10.129.2.28 50000
 
 
 
-![](attachments/Pasted%20image%2020261111111542.png)
+![245](attachments/Pasted%20image%2020261111111542.png)![299](attachments/Pasted%20image%2020261111111907.png)
 
 
 
