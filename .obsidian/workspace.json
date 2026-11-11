@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Enumeration.md",
+                "file": "Network Enumeration with Nmap.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Enumeration"
+              "title": "Network Enumeration with Nmap"
             }
           },
           {
@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Network Enumeration with Nmap.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Network Enumeration with Nmap"
             }
           }
         ],
@@ -219,8 +219,8 @@
   },
   "active": "0bf4758b05cc3468",
   "lastOpenFiles": [
-    "Enumeration.md",
     "README.md",
+    "Network Enumeration with Nmap.md",
     "Upgrading shells TTY.md",
     "attachments/Pasted image 20261111111907.png",
     "attachments/Pasted image 20261111111542.png",
