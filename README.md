@@ -116,6 +116,11 @@ Now you have a fully stablized shell and
 
 
 
+---
+---
+---
+
+
 # REAL GRIND STARTS FROM HERE!
 
 
@@ -135,6 +140,11 @@ The basic syntax of using nmap is generally as follows:
 ```bash
 typhoon26@htb[/htb]$ nmap <scan types> <options> <target>
 ```
+
+
+
+---
+
 
 
 ### Host Discovery:
@@ -168,6 +178,11 @@ We can also use a list of IP already to given to us using the List file name wit
 | `closed\|filtered` | This state only occurs in the **IP ID idle** scans and indicates that it was impossible to determine if the scanned port is closed or filtered by a firewall.                                           |
 
 
+
+---
+
+
+
 ### Important Flags:
 
 - **Scan Top 10 Ports:** --top-ports=10
@@ -186,7 +201,11 @@ We can also use a list of IP already to given to us using the List file name wit
 - `--max-retries`
 - `--min-rate 300`
 - **Number of Open Ports:** `cat tnet.default | grep "/tcp" | wc -l`
-- 
+
+
+
+---
+
 
 
 ### Scan Flags:
@@ -202,11 +221,21 @@ We can also use a list of IP already to given to us using the List file name wit
 - **Aggressive Scan:** `-A`
 
 
+
+---
+
+
+
 ### **OS guessing by TTL:**
 
 - **Windows:** `128`
 - **Linux**:`64`
 - **Cisco Routers and Network Equipment:** `255` 
+
+
+
+---
+
 
 
 ### Reporting:
@@ -224,6 +253,10 @@ xsltproc report.xml -o report.html
 
 
 > **We can generally say that the service headers come up with `PSH` flag in the `TCP` headers.**
+
+
+
+---
 
 
 
@@ -252,6 +285,50 @@ typhoon26@htb[/htb]$ sudo nmap <target> --script <category>
 ```bash
 typhoon26@htb[/htb]$ sudo nmap <target> --script <script-name>,<script-name>,...
 ```
+
+
+
+---
+
+
+
+### Firewall and IDS / IPS Evasion:
+
+- **Detect Firewall:** Use Flag manipulation and observe the responses by nmap.
+- **Detect IDS:** Interact heavily with the target and it will send the alert to admin and admin will block you.
+- **Detect IPS:** Interact heavily with the target and it will automatically block you.
+
+- Use Decoys:
+
+```bash
+nmap -sS <target> -Pn -n --packet-trace --disable-arp-ping --reason -D RND:5
+```
+
+- **`IP ID` Manipulation:**  We can use IP ID to check the behavior or ports and responses, we can get the number of expected hosts in there and also guess the OS with IP ID, Modern systems set sequential `IP ID`s while old system and linux set random and large values and sometimes `0`.
+
+- **Scan using a Different Source IP (Spoofing**):
+
+```bash
+nmap -sS <target> -Pn -n -S <SPOOFED_IP> -e <INTERFACE>
+```
+
+
+Sometimes IDS, IPS and firewalls trust DNS Servers as in DMZs we can have to interact with the web servers so company's own DNS Servers are more trusted than externals mostly on port 53.
+
+```bash
+nmap -sS <target> -n -Pn --source-port 53
+```
+
+We can then connect to that port with ncat to check the info such as banner.
+
+```bash
+ncat -nv --source-port 53 10.129.2.28 50000
+```
+
+
+
+
+---
 
 
 
