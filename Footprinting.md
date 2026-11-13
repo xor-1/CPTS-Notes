@@ -25,7 +25,7 @@
 **ENUMERATION IS AN EXPERIENCE BASED APPROACH!**
 
 
-![](attachments/Pasted%20image%2020261112092634.png)
+![700](attachments/Pasted%20image%2020261112092634.png)
 
 
 > **Methodology is a dynamic and growing aspect that is constantly changing and can therefore differ.**
@@ -94,8 +94,8 @@ dig any example.com
 	- for aws: `*.amazonaws.com`
 	- for azure: `*.blob.core.windows.net`
 - Check the target website for source code
-- [Domain.Glass](Domain.Glass)
-- [GrayHatWareFare](buckets.GrayHatWareFare.com)
+- [Domain.Glass](https://Domain.Glass)
+- [GrayHatWareFare](https://buckets.GrayHatWareFare.com)
 - Check for leaked SSH keys
 
 and donot stop here!
@@ -104,5 +104,83 @@ and donot stop here!
 
 ---
 
+
+
+### Staff
+
+
+Searching for and identifying employees on social media platforms can also reveal a lot about the teams' infrastructure and makeup. This, in turn, can lead to us identifying which technologies, programming languages, and even software applications are being used.
+
+- [LinkedIn](https://www.linkedin.com/) or [Xing](https://www.xing.de/)
+
+
+
+---
+
+
+
+### File Transfer Protocol (FTP):
+
+- TCP Port 21 = Control Plane
+- TCP Port 20 = Data Plane
+
+**Connection Type:**
+- Active = Data plane connection initiated by the remote host
+- Passive = Data plane connection initiated by our host
+
+
+**TFTP (Trivial File Transfer Protocol):**
+- Uses UDP Port 69
+- no directory listing fucntionality
+
+
+**Default configuration:**
+
+```bash
+nano /etc/vsftpd.conf
+```
+
+**FTP Users:**
+
+this file contains the isers that are not allowed to login to the ftp server
+
+```bash
+cat /etc/ftpusers
+```
+
+
+
+**Anonymous Login:**
+
+- Users can login with a anonymous user
+- Can be configured in `/etc/vsftpd.conf`
+
+
+**Download All Available Files:**
+
+```bash
+wget -m --no-passive ftp://anonymous@anonymous@IP
+```
+
+**Upload a file:**
+
+```bash
+put filename.txt
+```
+
+
+**Common Scripts for FTP enumeration:**
+
+```
+ftp-anon
+ftp-syst
+```
+
+
+**Connect over a secure connection using `openssl`:**
+
+```bash
+openssl s_client -connect IP:PORT -starttls ftp
+```
 
 
